@@ -4,6 +4,8 @@ import {Routes, Route} from 'react-router-dom';
 
 import Home from './pages/home/home.page';
 
+import Employees from './pages/employees/employees.page';
+
 import Layout from './components/layout/layout.component';
 
 import './App.scss';
@@ -24,11 +26,15 @@ function App({getEmployees, getLocation, getJobs}) {
     apiCall('GET', `/employee`)
       .then((response)=> getEmployees(response))
       .catch(err=> console.log(err))
+  },[])
 
+  useEffect(()=>{
     apiCall('GET', `/location`)
       .then((response)=> getLocation(response))
       .catch(err=> console.log(err))
+  },[])
 
+  useEffect(()=>{
     apiCall('GET', `/job`)
       .then((response)=> getJobs(response))
       .catch(err=> console.log(err))
@@ -38,6 +44,7 @@ function App({getEmployees, getLocation, getJobs}) {
     <Routes>
       <Route element={<Layout/>}>
         <Route exact path="/" element={<Home />} />
+        <Route exact path="/employees" element={<Employees />} />
       </Route>
     </Routes>
   </>
