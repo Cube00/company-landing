@@ -14,6 +14,8 @@ import Filter from '../../components/filter/filter.component';
 
 import './employees.styles.scss';
 
+import EmployeeCard from '../../components/employee-card/employee-card.component';
+
 const Employees = ({employees, jobs, locations}) =>{
   const [state, setState] = useState([]);
 
@@ -24,10 +26,11 @@ const Employees = ({employees, jobs, locations}) =>{
   return <>
     <div className="employees-page">
       <Filter state={state} setState={setState} />
-
-      {state?.map((e)=>{
-        return <>heeii</>
-      })}
+      <div className="employees-content">
+        {state?.map((item)=>{
+          return <EmployeeCard key={item.id} jobs={jobs} locations={locations} item={item}/>
+        })}
+      </div>
     </div>
   </>
 }

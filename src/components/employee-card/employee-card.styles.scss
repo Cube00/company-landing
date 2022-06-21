@@ -1,0 +1,55 @@
+.employee-card {
+  background-color:#fff;
+  border-radius:0.5vw;
+  padding:1vw;
+  margin-right:4%;
+  width: 22%;
+  margin-bottom:3vw;
+  transition: 0.3s;
+  cursor: pointer;
+  &.top-employee {
+    background-color: #666ae5;
+    .info {
+      h3 {
+        color:white;
+      }
+    }
+  }
+  &:nth-child(4n){
+    margin-right:0;
+  }
+  .image {
+    width: 80%;
+    height: 10vw;
+    overflow: hidden;
+    margin:auto;
+    border-radius: 50%;
+    img {
+      width: 100%;
+    }
+  }
+  .info {
+    margin-top:2vw;
+    h2 {
+      text-align: center;
+      font-size:1.4vw;
+      font-family: "Titillium-Bold";
+    }
+    h4 {
+      text-align: center;
+      font-size:1vw;
+      font-family: "Titillium-Regular";
+      color:#c1c1c1;
+      font-weight: normal;
+      margin-bottom:2vw;
+    }
+    h3 {
+      color:#666ae5;
+      font-family: "Titillium-Regular";
+      font-size:1.1vw;
+    }
+  }
+  &:hover {
+    box-shadow: 0 3px 9px #f0f0f3;
+  }
+}

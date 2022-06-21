@@ -56,7 +56,7 @@ const Filter = ({state, setState, employees, jobs, locations}) =>{
 
   useEffect(()=>{
     filterFunc()
-  },[jobContent, locationContent])
+  },[jobContent, locationContent, sort])
 
   return <>
     <div className="filter-box">
