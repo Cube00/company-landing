@@ -1,0 +1,45 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  list-style-type: none;
+}
+
+body {
+  background-color: #f7f8fa;
+}
+
+#root {
+  min-height: 100vh;
+  display:flex;
+  flex-direction:column;
+}
+
+@font-face {
+  font-family: 'Open Sans', sans-serif;
+  src: url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap');
+}
+
+@font-face {
+  font-family: "Titillium-Bold";
+  src: url("./fonts/TitilliumWeb-Bold.eot");
+  /* IE9 Compat Modes */
+  src: url("./fonts/TitilliumWeb-Bold.eot?#iefix")
+      format("embedded-opentype"),
+    url("./fonts/TitilliumWeb-Bold.woff2") format("woff2"),
+    url("./fonts/TitilliumWeb-Bold.woff") format("woff"),
+    url("./fonts/TitilliumWeb-Bold.ttf") format("truetype"),
+    url("./fonts/TitilliumWeb-Bold.svg#TitilliumWeb-Bold") format("svg");
+}
+
+@font-face {
+  font-family: "Titillium-Regular";
+  src: url("./fonts/TitilliumWeb-Regular.eot");
+  /* IE9 Compat Modes */
+  src: url("./fonts/TitilliumWeb-Regular.eot?#iefix")
+      format("embedded-opentype"),
+    url("./fonts/TitilliumWeb-Regular.woff2") format("woff2"),
+    url("./fonts/TitilliumWeb-Regular.woff") format("woff"),
+    url("./fonts/TitilliumWeb-Regular.ttf") format("truetype"),
+    url("./fonts/TitilliumWeb-Regular.svg#TitilliumWeb-Regular") format("svg");
+}

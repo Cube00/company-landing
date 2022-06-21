@@ -1,0 +1,57 @@
+.clear {
+  height: 6vw;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  margin-bottom:1vw;
+}
+
+.header {
+  width: 100vw;
+  height: 6vw;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:0 5vw;
+  z-index:99;
+  transition:0.3s;
+  .menu {
+    ul {
+      display: flex;
+      li {
+        margin:2vw 1.5vw;
+        a{
+          font-family: "Titillium-Regular";
+          text-decoration: none;
+          color: #cecece;
+          transition: 0.3s;
+          &:hover {
+            color:#3e3e3e;
+          }
+        }
+      }
+    }
+  }
+  .feedback {
+    button {
+      background-color: #8833ff;
+      border:none;
+      border-radius:0.5vw;
+      padding:1vw 1.5vw;
+      font-family: "Titillium-Bold";
+      color:#fff;
+      transition: 0.3s;
+      cursor: pointer;
+      &:hover {
+        box-shadow: 0 1px 4px #be8fff;
+      }
+    }
+  }
+}
+
+.sticky-header{
+  background-color: #fff;
+  transition: 0.3s;
+  width: 100%;
+}
