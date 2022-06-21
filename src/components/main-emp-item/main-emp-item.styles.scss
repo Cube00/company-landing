@@ -1,0 +1,23 @@
+.main-card {
+  width: 25%;
+  margin-right:5%;
+  background-color:#202046;
+  border-radius:0.6vw;
+  padding:2vw;
+  transition:0.3s;
+  cursor: pointer;
+  &:nth-last-child(1){
+    margin-right:0;
+  }
+  h2 {
+    color:#fff;
+    font-size:1.2vw;
+    font-family: "Titillium-Bold";
+  }
+  &:hover {
+    background: #666ae5;
+    h2,h3 {
+      color:#fff;
+    }
+  }
+}

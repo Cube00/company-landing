@@ -12,13 +12,25 @@ import {connect} from 'react-redux';
 
 import {getEmployeesData} from './redux/employees/employees.action';
 
+import {getLocationData} from './redux/location/location.action'
+
+import {getJobsData} from './redux/jobs/jobs.action'
+
 import {apiCall} from './utils/request/request.utils';
 
-function App({employees}) {
+function App({getEmployees, getLocation, getJobs}) {
 
   useEffect(()=>{
     apiCall('GET', `/employee`)
-      .then((response)=> employees(response))
+      .then((response)=> getEmployees(response))
+      .catch(err=> console.log(err))
+
+    apiCall('GET', `/location`)
+      .then((response)=> getLocation(response))
+      .catch(err=> console.log(err))
+
+    apiCall('GET', `/job`)
+      .then((response)=> getJobs(response))
       .catch(err=> console.log(err))
   },[])
 
@@ -32,7 +44,9 @@ function App({employees}) {
 }
 
 const mapDispatchToProps = dispatch => ({
-  employees: (employees) => dispatch(getEmployeesData(employees))
+  getEmployees: (employees) => dispatch(getEmployeesData(employees)),
+  getLocation: (locations) => dispatch(getLocationData(locations)),
+  getJobs: (jobs) => dispatch(getJobsData(jobs))
 })
 
 export default connect(null, mapDispatchToProps)(App);
