@@ -1,0 +1,16 @@
+.company-strengths {
+  overflow: hidden;
+  margin-bottom:2vw;
+  height: 22vw;
+  .content {
+    width: 60vw;
+    margin:auto;
+    background: #fff;
+    border-radius:0.4vw;
+    box-shadow: 0 3px 9px #e3e3e3;
+    height: 21vw;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+}

@@ -4,6 +4,7 @@
   position: relative;
   overflow: hidden;
   margin-bottom:1vw;
+  background-color:transparent;
 }
 
 .header {
@@ -16,6 +17,7 @@
   padding:0 5vw;
   z-index:99;
   transition:0.3s;
+  background-color:transparent;
   .menu {
     ul {
       display: flex;
@@ -24,10 +26,10 @@
         a{
           font-family: "Titillium-Regular";
           text-decoration: none;
-          color: #cecece;
+          color: #898989;
           transition: 0.3s;
           &:hover {
-            color:#3e3e3e;
+            color:#474747;
           }
         }
       }

@@ -9,7 +9,7 @@ const employeesReducer = (state = INITIAL_STATE, action) =>{
     case employeesTypes.GET_EMPLOYEES_DATA:
       return {
         ...state,
-        employees: ['vinme']
+        employees: action.payload
       }
     default:
       return state

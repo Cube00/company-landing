@@ -12,15 +12,14 @@ import {connect} from 'react-redux';
 
 import {getEmployeesData} from './redux/employees/employees.action';
 
-import {requestFunc} from './utils/request/request.utils';
+import {apiCall} from './utils/request/request.utils';
 
-function App({emplyees}) {
+function App({employees}) {
 
   useEffect(()=>{
-    requestFunc('GET', 'https://test-task-api-optimo.herokuapp.com/employee')
-      .then((response)=> console.log(response, 'this is response'))
+    apiCall('GET', `/employee`)
+      .then((response)=> employees(response))
       .catch(err=> console.log(err))
-    emplyees('employee 1')
   },[])
 
   return <>
@@ -33,7 +32,7 @@ function App({emplyees}) {
 }
 
 const mapDispatchToProps = dispatch => ({
-  emplyees: (employees) => dispatch(getEmployeesData(employees))
+  employees: (employees) => dispatch(getEmployeesData(employees))
 })
 
 export default connect(null, mapDispatchToProps)(App);
