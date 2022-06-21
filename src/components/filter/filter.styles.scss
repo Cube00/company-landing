@@ -1,0 +1,79 @@
+.filter-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .sort {
+    padding:1vw 3vw;
+    border-radius:1.1vw;
+    border:none;
+    font-family: "Titillium-Regular";
+    font-size:1vw;
+    background-color:#deeaf9;
+    cursor:pointer;
+    background-color: #fff;
+    box-shadow: 0 2px 6px #eeeeee;
+    &.active {
+      background-color:#666ae5;
+      color:#fff;
+    }
+  }
+  .filter-tools {
+    display: flex;
+    div {
+      .drop-btn {
+        padding:1.3vw 2.4vw;
+        background-color:#fff;
+        border:none;
+        border-radius:0.4vw;
+        font-size:1.2vw;
+        font-family: "Titillium-Bold";
+        cursor:pointer;
+        margin-left:3vw;
+      }
+    }
+    .location-dropdown {
+      position: relative;
+      .locations {
+        position: absolute;
+        display: none;
+        &-active {
+          position: absolute;
+          display: block;
+          width: 10vw;
+          button {
+            width: 100%;
+            padding:1vw 2vw;
+            background-color:#fff;
+            border:none;
+            border-top:1px solid#f2f2f2;
+            font-size:1vw;
+            font-family: "Titillium-Bold";
+            cursor:pointer;
+          }
+        }
+      }
+    }
+    .location-dropdown, .jobs-dropdown {
+      position: relative;
+      .locations, .jobs {
+        position: absolute;
+        display: none;
+        &-active {
+          position: absolute;
+          display: block;
+          right:0;
+          button {
+            width: 100%;
+            padding:1vw 2vw;
+            background-color:#fff;
+            border:none;
+            border-top:1px solid#f2f2f2;
+            font-size:1vw;
+            font-family: "Titillium-Bold";
+            cursor:pointer;
+          }
+        }
+      }
+    }
+  }
+}

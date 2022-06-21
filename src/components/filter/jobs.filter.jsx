@@ -1,10 +1,10 @@
-const JobsFilter = ({jobs, filterFunc, setJobContent}) => {
+const JobsFilter = ({jobs, filterFunc, setJobContent, jobContent}) => {
   return <>
-    <div className="jobs">
-      <button onClick={()=> {filterFunc(); setJobContent({id:null, name:'All'})}}>All</button>
+    <div className={`jobs${jobContent.drop ? '-active' : ''}`}>
+      <button onClick={()=> {filterFunc(); setJobContent({id:null, name:'All', drop:false})}}>All</button>
       {jobs?.map((btn)=>{
         return <>
-          <button onClick={()=>{filterFunc(); setJobContent({id:btn.id, name:btn.name})}} key={btn.id}>
+          <button onClick={()=>{filterFunc(); setJobContent({id:btn.id, name:btn.name, drop:false})}} key={btn.id}>
             {btn?.name}
           </button>
         </>

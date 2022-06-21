@@ -11,15 +11,19 @@ import {selectCurrentLocations} from '../../redux/location/location.selectors';
 import LocationFilter from './location.filter';
 import JobsFilter from './jobs.filter';
 
+import './filter.styles.scss';
+
 const Filter = ({state, setState, employees, jobs, locations}) =>{
   const [sort, setSort] = useState(false);
   const [jobContent, setJobContent] = useState({
     id: null,
-    name: 'All'
+    name: 'All',
+    drop: false
   })
   const [locationContent, setLocationContent] = useState({
     id: null,
-    name: 'All'
+    name: 'All',
+    drop: false
   })
 
   function filterFunc() {
@@ -55,9 +59,19 @@ const Filter = ({state, setState, employees, jobs, locations}) =>{
   },[jobContent, locationContent])
 
   return <>
-    <button onClick={()=> {filterFunc(); setSort(!sort)}}>sort</button>
-    <LocationFilter locations={locations} filterFunc={filterFunc} setLocationContent={setLocationContent} />
-    <JobsFilter jobs={jobs} filterFunc={filterFunc} setJobContent={setJobContent} />
+    <div className="filter-box">
+      <button className={`sort${sort ? ' active' : ''}`} onClick={()=> {filterFunc(); setSort(!sort)}}>sort</button>
+      <div className="filter-tools">
+        <div className="location-dropdown">
+          <button className="drop-btn" onClick={()=> setLocationContent((prev)=>({...prev, drop: !prev.drop}))}>{locationContent.name}</button>
+          <LocationFilter locations={locations} filterFunc={filterFunc} setLocationContent={setLocationContent} locationContent={locationContent} />
+        </div>
+        <div className="jobs-dropdown">
+          <button className="drop-btn" onClick={()=> setJobContent((prev)=>({...prev, drop: !prev.drop}))}>{jobContent.name}</button>
+          <JobsFilter jobs={jobs} filterFunc={filterFunc} setJobContent={setJobContent} jobContent={jobContent} />
+        </div>
+      </div>
+    </div>
   </>
 }
 

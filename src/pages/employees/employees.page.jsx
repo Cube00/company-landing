@@ -12,6 +12,8 @@ import {sortItems} from '../../redux/employees/employees.action';
 
 import Filter from '../../components/filter/filter.component';
 
+import './employees.styles.scss';
+
 const Employees = ({employees, jobs, locations}) =>{
   const [state, setState] = useState([]);
 
@@ -20,11 +22,13 @@ const Employees = ({employees, jobs, locations}) =>{
   },[employees, jobs, locations])
 
   return <>
-    <Filter state={state} setState={setState} />
+    <div className="employees-page">
+      <Filter state={state} setState={setState} />
 
-    {state?.map((e)=>{
-      return <>heeii</>
-    })}
+      {state?.map((e)=>{
+        return <>heeii</>
+      })}
+    </div>
   </>
 }
 
