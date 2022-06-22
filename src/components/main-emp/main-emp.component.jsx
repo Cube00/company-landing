@@ -12,6 +12,8 @@ import {selectCurrentLocations} from '../../redux/location/location.selectors';
 
 import MainEmpItem from '../main-emp-item/main-emp-item.component';
 
+import {Link} from 'react-router-dom';
+
 const MainEmployees = ({employees, jobs, locations}) =>{
   return <>
     <div className="mainemployees">
@@ -26,7 +28,7 @@ const MainEmployees = ({employees, jobs, locations}) =>{
           <div className="emp-title">
             <h1>EMPLOYEES</h1>
             <h2>GET YOUR IDEAL WEB DEVELOPMENT SOLUTION.</h2>
-            <button>ALL EMPLOYEES</button>
+            <Link to="/employees"><button>ALL EMPLOYEES</button></Link>
           </div>
           <div className="emp">
             {
