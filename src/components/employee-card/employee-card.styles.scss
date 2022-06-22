@@ -10,6 +10,9 @@
   &.top-employee {
     background-color: #666ae5;
     .info {
+      h2 {
+        color:#fff;
+      }
       h3 {
         color:white;
       }
@@ -34,6 +37,7 @@
       text-align: center;
       font-size:1.4vw;
       font-family: "Titillium-Bold";
+      color:#000;
     }
     h4 {
       text-align: center;

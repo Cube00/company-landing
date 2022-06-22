@@ -63,11 +63,11 @@ const Filter = ({state, setState, employees, jobs, locations}) =>{
       <button className={`sort${sort ? ' active' : ''}`} onClick={()=> {filterFunc(); setSort(!sort)}}>sort</button>
       <div className="filter-tools">
         <div className="location-dropdown">
-          <button className="drop-btn" onClick={()=> setLocationContent((prev)=>({...prev, drop: !prev.drop}))}>{locationContent.name}</button>
+          <button className="drop-btn" onClick={()=> {setLocationContent((prev)=>({...prev, drop: !prev.drop})); setJobContent((prev)=>({...prev, drop: false}));}}>{locationContent.name}</button>
           <LocationFilter locations={locations} filterFunc={filterFunc} setLocationContent={setLocationContent} locationContent={locationContent} />
         </div>
         <div className="jobs-dropdown">
-          <button className="drop-btn" onClick={()=> setJobContent((prev)=>({...prev, drop: !prev.drop}))}>{jobContent.name}</button>
+          <button className="drop-btn" onClick={()=> {setJobContent((prev)=>({...prev, drop: !prev.drop})); setLocationContent((prev)=>({...prev, drop: false}))}}>{jobContent.name}</button>
           <JobsFilter jobs={jobs} filterFunc={filterFunc} setJobContent={setJobContent} jobContent={jobContent} />
         </div>
       </div>

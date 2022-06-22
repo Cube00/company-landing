@@ -16,12 +16,22 @@ import './employees.styles.scss';
 
 import EmployeeCard from '../../components/employee-card/employee-card.component';
 
-const Employees = ({employees, jobs, locations}) =>{
+import {apiCall} from '../../utils/request/request.utils.js';
+
+import {getEmployeesData} from '../../redux/employees/employees.action';
+
+const Employees = ({employees, jobs, locations, getEmployees}) =>{
   const [state, setState] = useState([]);
 
   useEffect(()=>{
     setState(employees)
-  },[employees, jobs, locations])
+  },[employees])
+
+  useEffect(()=>{
+    apiCall('GET', `/employee`)
+      .then((response)=> getEmployees(response))
+      .catch(err=> console.log(err))
+  },[])
 
   return <>
     <div className="employees-page">
@@ -41,4 +51,8 @@ const mapStateToProps = createStructuredSelector({
   locations: selectCurrentLocations
 })
 
-export default connect(mapStateToProps)(Employees);
+const mapDispatchToProps = dispatch => ({
+  getEmployees: (employees) => dispatch(getEmployeesData(employees)),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Employees);

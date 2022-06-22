@@ -18,6 +18,11 @@
   z-index:99;
   transition:0.3s;
   background-color:transparent;
+  .logo {
+    img {
+      width: 6vw;
+    }
+  }
   .menu {
     ul {
       display: flex;

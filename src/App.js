@@ -10,6 +10,8 @@ import Employees from './pages/employees/employees.page';
 
 import Feedback from './pages/feedback/feedback.page';
 
+import Employee from './pages/employee/employee.page';
+
 import './App.scss';
 
 import {connect} from 'react-redux';
@@ -21,6 +23,8 @@ import {getLocationData} from './redux/location/location.action'
 import {getJobsData} from './redux/jobs/jobs.action'
 
 import {apiCall} from './utils/request/request.utils';
+
+import EmployeeComponent from './components/employee/employee.component';
 
 function App({getEmployees, getLocation, getJobs}) {
 
@@ -48,6 +52,7 @@ function App({getEmployees, getLocation, getJobs}) {
         <Route exact path="/" element={<Home />} />
         <Route path="/employees" element={<Employees />} />
         <Route path="/feedback" element={<Feedback />} />
+        <Route path="/employees/:id" element={<Employee />} />
       </Route>
     </Routes>
   </>

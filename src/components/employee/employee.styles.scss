@@ -1,0 +1,54 @@
+.employee{
+  width: 70vw;
+  margin:5vw auto;
+  display: flex;
+  .employee-avatar{
+    width: 25%;
+    overflow: hidden;
+    margin-right:5%;
+    height:18vw;
+    img {
+      width: 100%;
+    }
+  }
+  .info {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    div {
+      display: flex;
+      align-items: center;
+      button {
+        background-color:#fff;
+        border-radius:0.4vw;
+        border:none;
+        outline:none;
+        padding:0.6vw 1vw;
+        font-size:2.2vw;
+        box-shadow: 0 2px 6px #f2f2f2;
+        transition:0.3s;
+        margin-right:1.4vw;
+        cursor:pointer;
+        &:hover {
+          box-shadow: 0 2px 6px #ccc;
+        }
+      }
+    }
+    h2 {
+      font-family: "Titillium-Bold";
+      font-size:3.8vw;
+      border-bottom:1px solid#ccc;
+      margin-bottom:1vw;
+    }
+    h4 {
+      margin-bottom:0.5vw;
+      font-family: "Titillium-Regular";
+      font-weight:normal;
+      font-size:1.3vw;
+      span {
+        font-size:0.95vw;
+        color:#969696;
+      }
+    }
+  }
+}

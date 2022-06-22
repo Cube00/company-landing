@@ -6,6 +6,8 @@ import {pageypos} from './header.utils';
 
 import './header.styles.scss';
 
+import Logo from '../../assets/logo.png';
+
 class Header extends React.Component {
   constructor(){
     super();
@@ -39,7 +41,9 @@ class Header extends React.Component {
     return <>
       <div className="clear"></div>
       <div className={`header${this.state.scroll ? ' sticky-header' : ''}`}>
-        <div className="logo"></div>
+        <div className="logo">
+          <img src={Logo} alt="" />
+        </div>
         <div className="menu">
           <ul>
             <li><Link to="/">Home</Link></li>
