@@ -1,0 +1,96 @@
+$sub-color: grey;
+$main-color: black;
+
+@mixin shrinkLabel {
+  top: -18px;
+  font-size: 12px;
+  color: $main-color;
+}
+
+.feedback-form {
+  width: 75vw;
+  padding: 5vw 10vw;
+  background-color:#fff;
+  border-radius:2vw;
+  margin:auto;
+  h2 {
+    font-size:3vw;
+    font-family: "Titillium-Bold";
+  }
+}
+
+#message {
+  resize: none;
+  outline:none;
+  width: 100%!important;
+  margin-bottom:1vw;
+  border:1px solid#ccc;
+  padding:1vw;
+  font-family: "Titillium-Regular";
+  font-size:1vw;
+}
+
+#submit {
+  padding:1vw 3vw;
+  font-size:1.1vw;
+  font-family: "Titillium-Bold";
+  border:none;
+  background-color:#666ae5;
+  color:#fff;
+  border-radius:0.3vw;
+  cursor:pointer;
+}
+
+.error-message {
+  margin: 1vw auto;
+  color:red;
+  font-family: "Titillium-Bold";
+  font-size:1.1vw;
+  text-align: center;
+}
+
+.group {
+  position: relative;
+  margin: 3.29vw 0;
+  .form-input {
+    background: none;
+    background-color: #fff;
+    color: $sub-color;
+    font-size: 1.31vw;
+    padding: 1.31vw 0.73vw 1.31vw 0.87vw;
+    display: block;
+    width: 100%;
+    border: none;
+    border-radius: 0;
+    margin: 1.83vw 0;
+    border-bottom:1px solid#ccc;
+    font-family: "Titillium-Regular";
+    &:focus {
+      outline: none;
+    }
+
+    &:focus ~ .form-input-label {
+      @include shrinkLabel();
+    }
+  }
+
+  input[type='password'] {
+    letter-spacing: 0.3em;
+  }
+
+  .form-input-label {
+    font-family: "Titillium-Regular";
+    color: $sub-color;
+    font-size: 1vw;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 12px;
+    top: 18px;
+    transition: 300ms ease all;
+
+    &.shrink {
+      @include shrinkLabel();
+    }
+  }
+}

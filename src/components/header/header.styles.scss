@@ -27,6 +27,7 @@
           font-family: "Titillium-Regular";
           text-decoration: none;
           color: #898989;
+          font-size:1.2vw;
           transition: 0.3s;
           &:hover {
             color:#474747;
@@ -43,6 +44,7 @@
       padding:1vw 1.5vw;
       font-family: "Titillium-Bold";
       color:#fff;
+      font-size:1vw;
       transition: 0.3s;
       cursor: pointer;
       &:hover {

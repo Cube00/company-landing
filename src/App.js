@@ -2,11 +2,13 @@ import React, {useEffect} from 'react';
 
 import {Routes, Route} from 'react-router-dom';
 
+import Layout from './components/layout/layout.component';
+
 import Home from './pages/home/home.page';
 
 import Employees from './pages/employees/employees.page';
 
-import Layout from './components/layout/layout.component';
+import Feedback from './pages/feedback/feedback.page';
 
 import './App.scss';
 
@@ -44,7 +46,8 @@ function App({getEmployees, getLocation, getJobs}) {
     <Routes>
       <Route element={<Layout/>}>
         <Route exact path="/" element={<Home />} />
-        <Route exact path="/employees" element={<Employees />} />
+        <Route path="/employees" element={<Employees />} />
+        <Route path="/feedback" element={<Feedback />} />
       </Route>
     </Routes>
   </>

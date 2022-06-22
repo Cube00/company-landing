@@ -47,7 +47,7 @@ class Header extends React.Component {
           </ul>
         </div>
         <div className="feedback">
-          <button>Feedback</button>
+          <Link to="/feedback"><button>Feedback</button></Link>
         </div>
       </div>
     </>
